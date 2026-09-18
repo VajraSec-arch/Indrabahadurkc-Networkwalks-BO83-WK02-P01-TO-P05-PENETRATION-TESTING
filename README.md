@@ -1,243 +1,360 @@
-# PENETRATION-TESTING
+# 🛡️ PENETRATION TESTING 
 
 
-## Footprinting, Reconnaissance & Network Scanning
+## FOOTPRINTING & NETWORK SCANNING
 
-**Program:** Cybersecurity & Ethical Hacking
+
+
+ **Pentester Name:** Indra Bahadur Kc  
+
+**Program / Batch:** B083 – Networkwalks
+
 **Week:** 02
-**Modules:** W2-PM1 & W2-PM5
-**Author:** [Your Name]
-**Date:** [Date]
-**Platform:** Kali Linux & Windows
+
+**Date:** 18-09-2026
+
+### 📚 Modules Completed
+
+* W2-PM1 – Multiple Kali Linux Tools
+* W2-PM2- Google Hacking Database / Google Dorking
+* W2-PM3 — Maltego Domain & Email Reconnaissance
+* W2-PM4 — theHarvester OSINT 
+* W2-PM5 – Zenmap Scanning
+
+### 🎯 Target
+
+* Networkwalks — authorized educational target
+* My own local LAN network
+* available resources 
+
+### 🔐 Authorization
+
+All activities were performed within the authorized scope of the practical exercise or on my own network.
 
 ---
 
-## 1. Introduction
+#  ⚠️ Liability Disclaimer
 
-This project covers the **footprinting, reconnaissance, and network scanning** phases of penetration testing.
+This report is created for educational and cybersecurity training purposes. All testing was performed only on authorized systems and my own local network.
 
-During this practical, I used several Kali Linux tools to collect information from an authorized target. I also used Zenmap to discover active devices on my own local network.
-
-The main goal was to understand how security professionals gather information, identify network assets, and document security-related observations before performing deeper testing.
-
-> **Scope:** All activities were performed only on authorized systems, training environments, or my own network.
+The commands and techniques shown should only be used in environments where proper permission has been obtained. Unauthorized scanning or access may violate laws and organizational policies.
 
 ---
 
-## 2. Objectives
+#  📝 Introduction
 
-* Understand the reconnaissance and footprinting process.
-* Collect publicly available information about an authorized target.
-* Identify web, DNS, and server-related information.
-* Discover active devices on a local network.
-* Identify IP and MAC addresses.
-* Create a basic network topology.
-* Document observations and potential security impact.
+During Week 02 of my Cybersecurity & Ethical Hacking internship, I worked on two important penetration-testing phases: **footprinting/reconnaissance** and **network scanning**.
+
+For the first activity, I used several Kali Linux tools to collect publicly available information about the assigned domain. For the second activity, I used **Zenmap** to discover active devices on my own local network.
+
+The main goal was to understand how cybersecurity professionals gather information about a target and document their findings before performing deeper security testing. 🔍
 
 ---
 
-## 3. Tools Used
+#  🧰 Tools Used
 
-| Tool        | Purpose                             |
-| ----------- | ----------------------------------- |
-| WHOIS       | Domain and registration information |
-| WhatWeb     | Web technology identification       |
-| Nslookup    | DNS and IP information              |
-| Curl        | HTTP header analysis                |
-| Wafw00f     | WAF detection                       |
-| DNSRecon    | DNS record enumeration              |
-| Zenmap      | Network host discovery and topology |
-| Windows CMD | IP and MAC address identification   |
-
----
-
-# 4. Footprinting & Reconnaissance
-
-I used multiple Kali Linux tools to gather different types of information about the authorized target.
-
-### WHOIS
-
-```bash
-whois [target-domain]
-```
-
-**Observation:**
-[Add your result and short observation]
-
-📸 **Screenshot:** [Add screenshot]
-
-### WhatWeb
-
-```bash
-whatweb [target-domain]
-```
-
-**Observation:**
-[Add your result and short observation]
-
-📸 **Screenshot:** [Add screenshot]
-
-### Nslookup
-
-```bash
-nslookup [target-domain]
-```
-
-**Observation:**
-[Add your IP/DNS result]
-
-📸 **Screenshot:** [Add screenshot]
-
-### Curl
-
-```bash
-curl -I https://[target-domain]
-```
-
-**Observation:**
-[Add your HTTP header result]
-
-📸 **Screenshot:** [Add screenshot]
-
-### Wafw00f
-
-```bash
-wafw00f https://[target-domain]
-```
-
-**Observation:**
-[Add your WAF result]
-
-📸 **Screenshot:** [Add screenshot]
-
-### DNSRecon
-
-```bash
-dnsrecon -d [target-domain]
-```
-
-**Observation:**
-[Add your DNS records/result]
-
-📸 **Screenshot:** [Add screenshot]
+| Tool           | Purpose                             |
+| -------------- | ----------------------------------- |
+| 🐧 Kali Linux  | Reconnaissance and security testing |
+| 🔎 WHOIS       | Domain and registration information |
+| 🌐 WhatWeb     | Website technology identification   |
+| 📡 Nslookup    | Domain-to-IP resolution             |
+| 📋 Curl        | HTTP header inspection              |
+| 🛡️ Wafw00f    | WAF detection                       |
+| 🗂️ DNSRecon   | DNS record enumeration              |
+| 🌐 Google-exploit DB | Exploit Database — (GHDB)    | 
+| 🔍 Maltego       |  network important information      |
+| 📧 theHarvester  | website emails ID's sub-domain info  |
+| 🗺️ Zenmap     | Network host discovery              |
+| 💻 Windows CMD | Local IP and network information    |
 
 ---
 
-# 5. Network Scanning with Zenmap
+#  🔍 Activities Performed
 
-I used Windows Command Prompt to identify my local network configuration before performing the scan.
+## PM1. Footprinting & Reconnaissance
+
+I performed reconnaissance using **WHOIS, WhatWeb, Nslookup, Curl, Wafw00f, and DNSRecon**. Each tool provided different information about the target.
+
+### 🔎 WHOIS
+
+I used WHOIS to collect publicly available domain-registration information and identify the domain's name servers.
+
+```bash
+whois networkwalks.com
+```
+
+**Observation:** Domain registration and name-server information was returned.
+
+<img width="2856" height="1596" alt="Screenshot 2026-09-16 075534" src="https://github.com/user-attachments/assets/22438a66-6378-4304-acaf-517e5bf1b303" />
+
+
+---
+
+### 🌐 WhatWeb
+
+WhatWeb was used to identify technologies used by the website.
+
+```bash
+whatweb networkwalks.com
+```
+
+**Observation:** The practical identified **WordPress 7.0.4** and **WP Download Manager 3.3.58**.
+
+This information can help a security professional identify technologies that may require further security review.
+
+<img width="2856" height="826" alt="Screenshot 2026-09-16 075828" src="https://github.com/user-attachments/assets/325de99b-64c7-434b-ba16-fe757b8fd668" />
+
+
+---
+
+### 📡 Nslookup
+
+Nslookup was used to resolve the domain name to its IP address.
+
+```bash
+nslookup networkwalks.com
+```
+
+**Observation:** The sample result identified **192.232.216.135**.
+
+*Replace this with my actual result if different.*
+
+<img width="2736" height="746" alt="Screenshot 2026-09-16 080038" src="https://github.com/user-attachments/assets/10cbeb5c-b09b-4920-8adb-4fea3fc9b1d2" />
+
+
+---
+
+### 📋 Curl
+
+Curl was used to inspect the website's HTTP response headers.
+
+```bash
+curl -I https://networkwalks.com
+```
+
+**Observation:** The response provided technical information and showed the WordPress REST API endpoint `/wp-json/`.
+
+<img width="2854" height="1590" alt="Screenshot 2026-09-16 080602" src="https://github.com/user-attachments/assets/335c4639-2469-4407-93ee-9658ef7ee2b1" />
+
+
+---
+
+### 🛡️ Wafw00f
+
+Wafw00f was used to determine whether a Web Application Firewall was protecting the website.
+
+```bash
+wafw00f https://networkwalks.com
+```
+
+**Observation:** The practical identified **ModSecurity (SpiderLabs)**.
+
+<img width="2850" height="950" alt="Screenshot 2026-09-16 080533" src="https://github.com/user-attachments/assets/549610a3-10f2-4317-9bf4-799bc664263b" />
+
+
+---
+
+### 🗂️ DNSRecon
+
+DNSRecon was used to collect DNS information.
+
+```bash
+dnsrecon -d networkwalks.com
+```
+
+**Observation:** The results included information about name servers, mail servers, SPF/TXT records, and service records.
+
+<img width="2860" height="1120" alt="Screenshot 2026-09-16 080729" src="https://github.com/user-attachments/assets/d71df886-5b94-4d17-8f16-c870b613689a" />
+
+
+---
+
+## 🧪 PM2 — Google Hacking Database / Google Dorking
+🎯 Objective
+The second task focused on understanding Google Dorking, also known as Google Hacking.
+
+The purpose was to explore how specially constructed search queries can identify publicly indexed web resources.
+
+🌐 Platform Used
+Exploit Database — Google Hacking Database (GHDB)
+
+The Google Hacking Database contains examples of search operators and queries that can be used to locate specific types of publicly indexed information.
+🔎 Search Performed
+A search for:cam
+
+performed within the Google Hacking Database.
+
+The database returned multiple examples involving:
+
+📷 IP cameras
+
+🌐 Webcams
+
+📡 Camera monitoring systems
+<img width="2862" height="1690" alt="Screenshot 2026-09-16 082204" src="https://github.com/user-attachments/assets/842c6fd6-e217-48ed-a457-dde64711ab69" />
+<img width="2876" height="1738" alt="Screenshot 2026-09-16 082154" src="https://github.com/user-attachments/assets/1a056115-a8b3-4f67-8eac-1cf4f21d620a" />
+
+## 🔎 PM3 — Maltego Domain & Email Reconnaissance
+📌 Objective
+
+The objective of this task was to use Maltego to perform passive reconnaissance and identify publicly available information associated with a target domain.
+🛠️ Tool Used
+
+    🔍 Maltego Graph Desktop 4.13.0
+
+🔍 Methodology
+
+Maltego was used to create a graph containing the target domain and related entities. The investigation focused on identifying publicly available relationships between the domain and other information.
+
+During the investigation, Maltego identified an email address associated with the domain.
+
+<img width="2878" height="1822" alt="Screenshot 2026-09-18 060828" src="https://github.com/user-attachments/assets/dde7bcaa-d74c-47ee-8cf6-6fe87f207259" />
+
+Evidence Description:
+The screenshot shows the Maltego graph containing the discovered domain and its relationship to an associated email address. The graph demonstrates how publicly available information can be correlated to build a picture of the target's external footprint.
+
+
+## 🕵️ PM4 — theHarvester OSINT 
+📌 Objective
+
+The objective of this task was to use theHarvester to collect publicly available information related to a target domain, including hostnames and other OSINT data.
+🛠️ Tools Used
+
+    🕵️ theHarvester 4.11.1
+
+    🐧 Kali Linux
+
+🔍 Methodology
+
+theHarvester was executed against the target domain using multiple available search and OSINT sources.
+
+The tool attempted to collect information such as:
+
+    🌐 Hostnames
+
+    📧 Email addresses
+
+    🔎 Publicly indexed information
+
+    🖥️ Infrastructure-related information
+
+<img width="2628" height="1560" alt="Screenshot 2026-09-18 063127" src="https://github.com/user-attachments/assets/4010c56f-464d-40c4-94a8-bdf693e7f37e" />
+<img width="2880" height="1766" alt="Screenshot 2026-09-18 062158" src="https://github.com/user-attachments/assets/4ca3c36e-705c-4d2a-a489-86ecc4e94230" />
+
+## PM5. 🗺️ Network Scanning with Zenmap
+
+For the second activity, I used **Zenmap** to discover active devices on my own local network.
+
+First, I checked my network configuration using:
 
 ```cmd
 ipconfig
 ```
 
-**IPv4:** [Your IP]
-**Subnet:** [Your subnet]
-**Gateway:** [Your gateway]
+I then entered my local subnet into Zenmap and performed a **Ping Scan**.
 
-📸 **Screenshot:** [Add screenshot]
+### Observation
 
-I then entered my local subnet into Zenmap and performed a **Ping Scan** to identify active hosts.
+The sample identified three live hosts:
 
-**Target Network:** `[Your subnet]`
+* 10.0.0.1
+* 10.0.0.2
+* 10.0.0.4
 
-### Discovered Hosts
 
-| No. | IP Address | MAC Address | Status |
-| --- | ---------- | ----------- | ------ |
-| 1   | [IP]       | [MAC]       | Active |
-| 2   | [IP]       | [MAC]       | Active |
-| 3   | [IP]       | [MAC]       | Active |
-| 4   | [IP]       | [MAC]       | Active |
+These are sample values and should be replaced with my actual scan results.
 
-📸 **Zenmap Screenshot:** [Add screenshot]
+Zenmap also provided available IP and MAC address information. Finally, I used the **Topology** section to create a visual representation of the discovered network.
+<img width="2878" height="1562" alt="Screenshot 2026-09-18 070134" src="https://github.com/user-attachments/assets/0c105542-180b-4838-963f-ccfc2a80ecad" />
+<img width="2880" height="1606" alt="Screenshot 2026-09-18 070153" src="https://github.com/user-attachments/assets/efd5dbce-7d03-48da-849c-cce40e0edb26" />
 
-### Network Topology
 
-I used Zenmap's **Topology** feature to visualize the discovered devices and exported the topology for documentation.
-
-📸 **Topology Screenshot:** [Add screenshot]
 
 ---
 
-# 6. Findings & Risk Analysis
+# ⚠️ Risk Analysis
 
-| Finding                  | Observation    | Potential Impact                         | Risk         |
-| ------------------------ | -------------- | ---------------------------------------- | ------------ |
-| Web technology exposed   | [Your finding] | May assist further enumeration           | [Low/Medium] |
-| IP address identified    | [Your finding] | Reveals network information              | [Low/Medium] |
-| HTTP information exposed | [Your finding] | Provides technical details               | [Low/Medium] |
-| DNS information exposed  | [Your finding] | Helps map infrastructure                 | [Low/Medium] |
-| Active hosts discovered  | [Your finding] | Unknown devices may require verification | [Low/Medium] |
+| Finding                            | Potential Impact                                     | Risk   |
+| ---------------------------------- | ---------------------------------------------------- | ------ |
+| Web technology information exposed | May help identify software requiring security review | Medium |
+| Server IP identifiable             | Provides information about the web service           | Low    |
+| HTTP information exposed           | May assist further enumeration                       | Low    |
+| WAF technology identifiable        | Reveals part of the security architecture            | Low    |
+| DNS information exposed            | Helps build an infrastructure profile                | Medium |
+| Multiple local hosts discovered    | Unknown devices may require investigation            | Medium |
+| Public domain info was identified |	Could assist with attack-surface mapping	            |  Low   |
+| email associated with domain was identified |	Could potentially be used for phishing,spam attempts | Low |
 
-> These are reconnaissance observations, not confirmed vulnerabilities. Further authorized testing would be required to validate any vulnerability.
-
----
-
-# 7. Recommendations
-
-* Regularly review publicly exposed technical information.
-* Keep software, CMS platforms, and plugins updated.
-* Review HTTP headers and unnecessary information exposure.
-* Monitor and maintain DNS records.
-* Properly configure and monitor WAF protection.
-* Perform regular internal network discovery.
-* Investigate unknown devices on the network.
-* Keep network documentation and topology updated.
-* Always perform security testing within an authorized scope.
+These are **security observations, not confirmed vulnerabilities**. No exploitation or vulnerability validation was performed during these exercises. 
 
 ---
 
-# 8. Learning Outcomes
+# 🛡️ Recommendations
 
-This practical helped me gain hands-on experience with:
+Based on the observations, I recommend:
 
-* Kali Linux reconnaissance tools
-* DNS and domain enumeration
-* Web technology fingerprinting
-* HTTP header analysis
-* WAF detection
-* Network host discovery
-* IP and MAC address identification
-* Zenmap and network topology
-* Security finding documentation
-
-The main lesson I learned is that **good reconnaissance helps security professionals understand an environment before performing deeper security testing**.
-
----
-
-# 9. Conclusion
-
-In Week 2, I completed practical exercises covering **footprinting, reconnaissance, and network scanning**.
-
-By using multiple Kali Linux tools and Zenmap, I learned how to collect information, identify active network devices, analyze observations, and document findings professionally.
-
-This practical improved my understanding of the early stages of penetration testing and provided a strong foundation for the next phase of my cybersecurity learning.
+1. **Review publicly exposed technology information.**
+2. **Keep CMS platforms, plugins, and other software updated.**
+3. **Review HTTP headers** for unnecessary technical information.
+4. **Regularly review DNS records** and remove unnecessary entries.
+5. **Properly configure and monitor the WAF.**
+6. **Perform regular internal network discovery.**
+7. **Investigate unknown or unauthorized devices.**
+8. **Keep network topology documentation updated.**
+9. **Always perform security testing with proper authorization.**
+10. **Regularly review information publicly associated with organizational domains**
+11. **Minimize unnecessary exposure of organizational email addresses.**
+12. **Enable MFA on accounts associated with publicly exposed email addresses.**
+13. **Monitor for phishing and impersonation attempts.**
+14. **Remove unnecessary publicly accessible information where appropriate
 
 ---
 
-## 10. Evidence
+# 7. 📸 Evidence
 
-All practical evidence and screenshots are included in this section.
+The following evidence should be included in the GitHub repository:
 
-📸 WHOIS
-📸 WhatWeb
-📸 Nslookup
-📸 Curl
-📸 Wafw00f
-📸 DNSRecon
-📸 Windows IP Configuration
-📸 Zenmap Scan
-📸 Network Topology
+* WHOIS result
+* WhatWeb result
+* Nslookup result
+* Curl headers
+* Wafw00f result
+* DNSRecon result
+* Windows `ipconfig`
+* Exploit -db
+* Maltego Domain & Email Reconnaissance
+* theHarvester OSINT
+* Zenmap scan
+* IP/MAC information
+* Zenmap network topology
 
 ---
 
-## Author
+# 8. 🎯 Conclusion
 
-**[Your Name]**
-Cybersecurity & Ethical Hacking Student
+During Week 02, I gained practical experience in **footprinting, reconnaissance, and network scanning**.
 
-**GitHub:** [Your GitHub]
-**LinkedIn:** [Your LinkedIn]
+I learned how different Kali Linux tools can provide useful information about a website and its infrastructure. I also learned how Zenmap can be used to discover active devices and visualize a local network.
 
-**Project:** Week 02 – Footprinting, Reconnaissance & Network Scanning
+The biggest lesson for me was that **information gathering is an important part of cybersecurity**. Before performing deeper security testing, a professional needs to understand the environment and carefully document what has been discovered.
+
+I also learned that a technical observation is not automatically a vulnerability. Proper validation and authorized testing are required before confirming a security issue.
+
+Overall, this practical improved my understanding of reconnaissance tools, network discovery, risk identification, and professional cybersecurity reporting. 🔐💻
+
+---
+
+# 👤 Author & Project Information
+
+**Author:** Indra bahadur Kc
+**Program:** Cybersecurity & Ethical Hacking
+**Batch:** B083 – Networkwalks
+**Week:** 02
+
+### 🚀 Project Summary
+
+**Focus:** Footprinting, Reconnaissance & Network Scanning
+**Tools:** Kali Linux, WHOIS, WhatWeb, Nslookup, Curl, Wafw00f, DNSRecon, exploit-DB, Maltego, theHarvester, Zenmap
+
+**🔐 Learn responsibly. Test ethically. Document professionally.**
